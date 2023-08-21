@@ -296,9 +296,9 @@ h3 {
 }
 
 
-.grid-template img {
-	width: 31.25rem;
-	object-fit: contain;
+grid-template a img {
+	object-fit: cover;
+	width: 100%;
 }
 
 .grid-template a {
