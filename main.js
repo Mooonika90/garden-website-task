@@ -40,17 +40,17 @@ const UNSPLASH_COMMON_HEADERS = {
 	Authorization: `Client-ID ${UNSPLASH_ACCESS_KEY}`,
 }
 
-const fixBug = () => {
-	msnry.runOnImageLoad(function () {
-		msnry.recalculate(true, true)
-		const event = new UIEvent('resize', {
-			view: window,
-			bubbles: true,
-			cancelable: false,
-		})
-		window.dispatchEvent(event)
-	}, true)
-}
+// const fixBug = () => {
+// 	msnry.runOnImageLoad(function () {
+// 		msnry.recalculate(true, true)
+// 		const event = new UIEvent('resize', {
+// 			view: window,
+// 			bubbles: true,
+// 			cancelable: false,
+// 		})
+// 		window.dispatchEvent(event)
+// 	}, true)
+// }
 
 function fetchImages(page) {
 	return fetch(`https://api.unsplash.com/search/photos?page=${page}&query=garden-design`, {
@@ -69,16 +69,13 @@ function fetchImages(page) {
 				aLink.href = photo.urls.regular
 				aLink.classList.add('fancybox')
 				aLink.dataset.fancybox = 'gallery'
-				// currentPage++
-				// const delay = 200
-				// aLink.setAttribute('data-aos-delay', currentPage * delay)
 				aLink.dataset.aos = 'zoom-out'
 				aLink.appendChild(img)
 				return aLink
 			})
 
 			gridTemplate.append(...imageElements)
-			// msnry.recalculate(true)
+			
 		})
 		.catch(error => console.error('Error fetching more images:', error))
 }
@@ -90,7 +87,6 @@ function initPhoto() {
 initPhoto()
 loadMoreButton.addEventListener('click', () => {
 	currentPage++
-	// msnry.recalculate(true)
 	fetchImages(currentPage)
 	// fixBug()
 })
