@@ -296,7 +296,7 @@ h3 {
 }
 
 
-grid-template a img {
+.grid-template a img {
 	object-fit: cover;
 	width: 100%;
 }
