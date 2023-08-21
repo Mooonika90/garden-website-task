@@ -192,17 +192,10 @@ header .btn-success {
 	color: var(--grey);
 }
 #aboutus img {
-	max-height: 46rem;
+	height: 46rem;
 	object-fit: cover;
-	object-position: right;
 	overflow: hidden;
 	width: 100%;
-}
-
-@media (max-width: 1200px) {
-	#aboutus img {
-		height: 45rem;
-	}
 }
 
 #aboutus {
@@ -284,7 +277,7 @@ h3 {
 	padding: 7.5rem 0;
 	align-tracks: stretch;
 	column-count: 3;
-	column-gap: 2.25rem 2.25rem;
+	column-gap: 2.25rem;
 }
 
 .grid-template::before {
@@ -302,10 +295,6 @@ h3 {
 	cursor: pointer;
 }
 
-.grid-template a img {
-	object-fit: cover;
-	width: 100%;
-}
 
 .grid-template img {
 	width: 31.25rem;
@@ -315,6 +304,7 @@ h3 {
 
 .grid-template a {
 	margin: 0;
+	margin-bottom: 2rem;
 	display: inline-block;
 	width: 100%;
 	overflow: hidden;
