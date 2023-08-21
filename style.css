@@ -283,7 +283,10 @@ h3 {
 	position: relative;
 	padding: 7.5rem 0;
 	align-tracks: stretch;
+	column-count: 3;
+	column-gap: 2.25rem 2.25rem;
 }
+
 .grid-template::before {
 	content: '';
 	position: absolute;
@@ -299,12 +302,33 @@ h3 {
 	cursor: pointer;
 }
 
-.grid-template a {
-	overflow: hidden;
-}
 .grid-template a img {
 	object-fit: cover;
 	width: 100%;
+}
+
+.grid-template img {
+	width: 31.25rem;
+	object-fit: contain;
+	border-radius: 0.5rem;
+}
+
+.grid-template a {
+	margin: 0;
+	display: inline-block;
+	width: 100%;
+	overflow: hidden;
+}
+
+@media (max-width: 992px) {
+	.grid-template {
+		column-count: 2;
+	}
+}
+@media (max-width: 567px) {
+	.grid-template {
+		column-count: 1;
+	}
 }
 
 .carousel-caption {
@@ -454,38 +478,5 @@ footer .nav-link:visited {
 	footer .btn {
 		justify-content: center;
 		margin-right: 0.5rem;
-	}
-}
-
-.grid-template img {
-	width: 31.25rem;
-	object-fit: contain;
-	border-radius: 0.5rem;
-}
-
-.grid-template a {
-	margin: 1rem;
-}
-
-.grid-template {
-	column-count: 3;
-	column-gap: 2.25rem;
-}
-
-.grid-template a {
-	margin: 0;
-	display: inline-block;
-	margin-bottom: 2rem;
-	width: 100%;
-}
-
-@media (max-width: 992px) {
-	.grid-template {
-		column-count: 2;
-	}
-}
-@media (max-width: 567px) {
-	.grid-template {
-		column-count: 1;
 	}
 }
